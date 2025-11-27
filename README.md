@@ -25,7 +25,7 @@ Turning-Cutting-Forces/
 │   ├── INFORME/                      # Imágenes asociadas a los CodigosExtra
 │   │   └── Imagenes/                 # Material visual utilizado en el informe
 │   │
-│   ├── K_s/                          # Datos medidos por el sensor (raw data del ensayo)
+│   ├── K_s/                          # Datos medidos por el sensor
 │   │
 │   ├── 1_Graficas.py                 # Generación de los gráficos principales
 │   ├── 2_Tacometro.py                # Determinación de rpm mediante la señal del tacómetro
@@ -34,11 +34,11 @@ Turning-Cutting-Forces/
 │   ├── 5_Ks.py                       # Ajuste de curva potencial para estimar K_s
 │   │
 │   ├── Datos.csv                     # Datos finales de ensayos 1–4 para la determinación de K_s
-│   └── Datos_v1.csv                  # Datos base obtenidos tras inspección manual (entrada para scripts)
+│   └── Datos_v1.csv                  # Datos base obtenidos tras inspección manual 
 │
 └── f_fixed/                          # Ensayos con avance fijo para calcular fuerzas
 |   |
-│   ├── A_p/                          # Datos medidos por el sensor (raw data del ensayo)
+│   ├── A_p/                          # Datos medidos por el sensor 
 │   │
 │   ├── DATA/                         # Datos procesados relevantes para cada etapa
 │   │   └── *.csv                     # Fuerzas, tiempo, rpm, avances, señales, etc.
@@ -52,5 +52,5 @@ Turning-Cutting-Forces/
 │   ├── 5_Ks.py                       # Determinacion de Fuerzas mediante Ks
 │   │
 │   ├── Datos.csv                     # Datos finales de ensayos 1–4 para la determinación de K_s
-│   └── Datos_v1.csv                  # Datos base obtenidos tras inspección manual (entrada para scripts)
+│   └── Datos_v1.csv                  # Datos base obtenidos tras inspección manual 
 
