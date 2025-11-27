@@ -7,33 +7,50 @@ Incluye:
 - Procesamiento de señales y gráficos asociados.  
 - Cálculo de parámetros como la presión específica de corte \(K_s\).
 ---
-
 ## 📁 Estructura del repositorio  
 
+```text
+
 Turning-Cutting-Forces/  
-│  
-├── Ks/                               # Carpeta principal del análisis  
-│   │  
-│   ├── codigos extra/                # Scripts complementarios (no relacionados con tacómetro/avance/fuerzas)  
-│   │  
-│   ├── DATA/                         # Datos originales de los ensayos  
-│   │   └── *.csv                     # Fuerzas, tiempo, rpm, avances, señales, etc.  
-│   │  
-│   ├── IMAGENES/                     # Gráficos generados  
-│   │   └── *.png / *.jpg             # Resultados visuales del análisis  
-│   │  
-│   ├── INFORME/                      # Archivos utilizados para la elaboración del informe  
-│   │   └── Imagenes/                 # Imágenes para el informe  
-│   │  
-│   ├── K_s/                          # Cálculo de la presión específica de corte  
-│   │   ├── Datos.csv                 # Datos finales para el cálculo de K_s  
-│   │   ├── Datos_v1.csv              # Datos tras inspección manual  
-│   │   └── K_s.py                    # Script para ajuste y determinación de K_s  
-│   │  
-│   └── README_local.txt (si existe)  # Archivos de apoyo (opcional)  
-│  
-└── f_fixed/                          # Carpeta con datos o análisis bajo condiciones "f fijado"  
-    └── (estructura variable según ensayos)
-
-
+│
+├── Ks/                               # Carpeta con scripts para determinar Ks
+│   │
+│   ├── CodigosExtra/                 # Scripts complementarios para generar gráficos adicionales
+│   │
+│   ├── DATA/                         # Datos procesados relevantes para cada etapa
+│   │   └── *.csv                     # Fuerzas, tiempo, rpm, avances, señales, etc.
+│   │
+│   ├── IMAGENES/                     # Gráficos principales del informe
+│   │
+│   ├── INFORME/                      # Imágenes asociadas a los CodigosExtra
+│   │   └── Imagenes/                 # Material visual utilizado en el informe
+│   │
+│   ├── K_s/                          # Datos medidos por el sensor (raw data del ensayo)
+│   │
+│   ├── 1_Graficas.py                 # Generación de los gráficos principales
+│   ├── 2_Tacometro.py                # Determinación de rpm mediante la señal del tacómetro
+│   ├── 3_Avance.py                   # Determinación de los avances para cada ensayo
+│   ├── 4_Fuerzas.py                  # Cálculo de fuerzas promedio por ensayo
+│   ├── 5_Ks.py                       # Ajuste de curva potencial para estimar K_s
+│   │
+│   ├── Datos.csv                     # Datos finales de ensayos 1–4 para la determinación de K_s
+│   └── Datos_v1.csv                  # Datos base obtenidos tras inspección manual (entrada para scripts)
+│
+└── f_fixed/                          # Ensayos con avance fijo para calcular fuerzas
+|   |
+│   ├── A_p/                          # Datos medidos por el sensor (raw data del ensayo)
+│   │
+│   ├── DATA/                         # Datos procesados relevantes para cada etapa
+│   │   └── *.csv                     # Fuerzas, tiempo, rpm, avances, señales, etc.
+│   │
+│   ├── IMAGENES/                     # Gráficos principales del informe
+│   │
+│   ├── 1_Graficas.py                 # Generación de los gráficos principales
+│   ├── 2_Tacometro.py                # Determinación de rpm mediante la señal del tacómetro
+│   ├── 3_Avance.py                   # Determinación de los avances para cada ensayo
+│   ├── 4_Fuerzas.py                  # Cálculo de fuerzas promedio por ensayo
+│   ├── 5_Ks.py                       # Determinacion de Fuerzas mediante Ks
+│   │
+│   ├── Datos.csv                     # Datos finales de ensayos 1–4 para la determinación de K_s
+│   └── Datos_v1.csv                  # Datos base obtenidos tras inspección manual (entrada para scripts)
 
