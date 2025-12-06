@@ -6,7 +6,6 @@ import os
 componentes = ["Fx", "Fy", "Fz"]
 
 def read_lvm_file(path, ind_i, ind_f):
-    """Lee un archivo .lvm y recorta entre índices indicados."""
     start_line = None
     with open(path, "r") as f:
         for i, line in enumerate(f):
@@ -17,16 +16,15 @@ def read_lvm_file(path, ind_i, ind_f):
     return df.iloc[ind_i:ind_f]
 
 def parse_filename(file):
-    """Extrae avance y profundidad desde algo como f104_a100.lvm."""
     base = os.path.splitext(file)[0]
     f_part, a_part = base.split("_")
     avance = int(f_part.replace("f", "")) / 1000  
     prof   = int(a_part.replace("a", "")) / 100   
     return avance, prof 
 
-folder = "K_s"
+folder = "K_s" 
 files = sorted([f for f in os.listdir(folder) if f.lower().endswith(".lvm")])
-limites = pd.read_csv("DATA/Datos_v1.csv")
+limites = pd.read_csv("DATA/Datos_v1.csv") # cambiar despues para que tome el de afuera
 inicios = limites["idx_inicio"].astype(int)
 fines   = limites["idx_fin"].astype(int)
 
@@ -58,4 +56,5 @@ for C in componentes:
     plt.tight_layout()
     plt.savefig(f"IMAGENES/Complete_{C}.svg", format="svg")
     plt.close(fig2)
+
 
